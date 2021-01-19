@@ -56,13 +56,13 @@
 You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
 <script>
-    var baseUrl = "http://localhost:8000";
+    var baseUrl = "http://blog.wpwink.com";
 </script>
 <script src="{{ asset("vendor/scribe/js/tryitout-2.4.2.js") }}"></script>
 <blockquote>
 <p>Base URL</p>
 </blockquote>
-<pre><code class="language-yaml">http://localhost:8000</code></pre><h1>Authenticating requests</h1>
+<pre><code class="language-yaml">http://blog.wpwink.com</code></pre><h1>Authenticating requests</h1>
 <p>This API is not authenticated.</p><h1>Authentication</h1>
 <p>APIs for managing authentication</p>
 <h2>User Registration</h2>
@@ -70,13 +70,13 @@ You can switch the language used with the tabs at the top right (or from the nav
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://localhost:8000/api/auth/user/registration" \
+    "http://blog.wpwink.com/api/auth/user/registration" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"natus","email":"iharber@example.net","phone":5871757.793464,"password":"ratione","password_confirmation":"vel"}'
+    -d '{"name":"aliquid","email":"cole.isidro@example.com","phone":1800.5,"password":"harum","password_confirmation":"optio"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/auth/user/registration"
+    "http://blog.wpwink.com/api/auth/user/registration"
 );
 
 let headers = {
@@ -85,11 +85,11 @@ let headers = {
 };
 
 let body = {
-    "name": "natus",
-    "email": "iharber@example.net",
-    "phone": 5871757.793464,
-    "password": "ratione",
-    "password_confirmation": "vel"
+    "name": "aliquid",
+    "email": "cole.isidro@example.com",
+    "phone": 1800.5,
+    "password": "harum",
+    "password_confirmation": "optio"
 }
 
 fetch(url, {
@@ -149,13 +149,13 @@ The value must be a valid email address.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://localhost:8000/api/auth/user/login" \
+    "http://blog.wpwink.com/api/auth/user/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"cruickshank.rose@example.net","password":"nulla"}'
+    -d '{"email":"tgreenholt@example.org","password":"ut"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/auth/user/login"
+    "http://blog.wpwink.com/api/auth/user/login"
 );
 
 let headers = {
@@ -164,8 +164,8 @@ let headers = {
 };
 
 let body = {
-    "email": "cruickshank.rose@example.net",
-    "password": "nulla"
+    "email": "tgreenholt@example.org",
+    "password": "ut"
 }
 
 fetch(url, {
@@ -210,11 +210,11 @@ The value must be a valid email address.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/user" \
+    -G "http://blog.wpwink.com/api/user" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/user"
+    "http://blog.wpwink.com/api/user"
 );
 
 let headers = {
@@ -258,11 +258,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/user-module/post" \
+    -G "http://blog.wpwink.com/api/user-module/post" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/user-module/post"
+    "http://blog.wpwink.com/api/user-module/post"
 );
 
 let headers = {
@@ -309,13 +309,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://localhost:8000/api/user-module/post" \
+    "http://blog.wpwink.com/api/user-module/post" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"title":"cupiditate","description":"odit"}'
+    -d '{"title":"eos","description":"sunt"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/user-module/post"
+    "http://blog.wpwink.com/api/user-module/post"
 );
 
 let headers = {
@@ -324,8 +324,8 @@ let headers = {
 };
 
 let body = {
-    "title": "cupiditate",
-    "description": "odit"
+    "title": "eos",
+    "description": "sunt"
 }
 
 fetch(url, {
@@ -373,11 +373,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/user-module/post/dicta" \
+    -G "http://blog.wpwink.com/api/user-module/post/magnam" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/user-module/post/dicta"
+    "http://blog.wpwink.com/api/user-module/post/magnam"
 );
 
 let headers = {
@@ -426,11 +426,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://localhost:8000/api/user-module/post/voluptatem" \
+    "http://blog.wpwink.com/api/user-module/post/sit" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/user-module/post/voluptatem"
+    "http://blog.wpwink.com/api/user-module/post/sit"
 );
 
 let headers = {
@@ -477,11 +477,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://localhost:8000/api/user-module/post/rerum" \
+    "http://blog.wpwink.com/api/user-module/post/maxime" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/user-module/post/rerum"
+    "http://blog.wpwink.com/api/user-module/post/maxime"
 );
 
 let headers = {

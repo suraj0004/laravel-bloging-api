@@ -32,12 +32,12 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
 <script>
-    var baseUrl = "http://localhost:8000";
+    var baseUrl = "http://blog.wpwink.com";
 </script>
 <script src="js/tryitout-2.4.2.js"></script>
 
 > Base URL
 
 ```yaml
-http://localhost:8000
+http://blog.wpwink.com
 ```

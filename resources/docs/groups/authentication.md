@@ -11,16 +11,16 @@ APIs for managing authentication
 
 ```bash
 curl -X POST \
-    "http://localhost:8000/api/auth/user/registration" \
+    "http://blog.wpwink.com/api/auth/user/registration" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"natus","email":"iharber@example.net","phone":5871757.793464,"password":"ratione","password_confirmation":"vel"}'
+    -d '{"name":"aliquid","email":"cole.isidro@example.com","phone":1800.5,"password":"harum","password_confirmation":"optio"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/auth/user/registration"
+    "http://blog.wpwink.com/api/auth/user/registration"
 );
 
 let headers = {
@@ -29,11 +29,11 @@ let headers = {
 };
 
 let body = {
-    "name": "natus",
-    "email": "iharber@example.net",
-    "phone": 5871757.793464,
-    "password": "ratione",
-    "password_confirmation": "vel"
+    "name": "aliquid",
+    "email": "cole.isidro@example.com",
+    "phone": 1800.5,
+    "password": "harum",
+    "password_confirmation": "optio"
 }
 
 fetch(url, {
@@ -102,16 +102,16 @@ The value must be a valid email address.</p>
 
 ```bash
 curl -X POST \
-    "http://localhost:8000/api/auth/user/login" \
+    "http://blog.wpwink.com/api/auth/user/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"cruickshank.rose@example.net","password":"nulla"}'
+    -d '{"email":"tgreenholt@example.org","password":"ut"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/auth/user/login"
+    "http://blog.wpwink.com/api/auth/user/login"
 );
 
 let headers = {
@@ -120,8 +120,8 @@ let headers = {
 };
 
 let body = {
-    "email": "cruickshank.rose@example.net",
-    "password": "nulla"
+    "email": "tgreenholt@example.org",
+    "password": "ut"
 }
 
 fetch(url, {

@@ -56,13 +56,13 @@
 You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
 <script>
-    var baseUrl = "http://localhost:8000";
+    var baseUrl = "http://blog.wpwink.com";
 </script>
 <script src="{{ asset("vendor/scribe/js/tryitout-2.4.2.js") }}"></script>
 <blockquote>
 <p>Base URL</p>
 </blockquote>
-<pre><code class="language-yaml">http://localhost:8000</code></pre><h1>Authenticating requests</h1>
+<pre><code class="language-yaml">http://blog.wpwink.com</code></pre><h1>Authenticating requests</h1>
 <p>This API is not authenticated.</p><h1>Endpoints</h1>
 <h2>Display all posts.</h2>
 <p><small class="badge badge-darkred">requires authentication</small></p>
@@ -70,11 +70,11 @@ You can switch the language used with the tabs at the top right (or from the nav
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/posts/all" \
+    -G "http://blog.wpwink.com/api/posts/all" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/posts/all"
+    "http://blog.wpwink.com/api/posts/all"
 );
 
 let headers = {
@@ -121,11 +121,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/posts/published" \
+    -G "http://blog.wpwink.com/api/posts/published" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/posts/published"
+    "http://blog.wpwink.com/api/posts/published"
 );
 
 let headers = {
@@ -172,11 +172,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/posts/unpublished" \
+    -G "http://blog.wpwink.com/api/posts/unpublished" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/posts/unpublished"
+    "http://blog.wpwink.com/api/posts/unpublished"
 );
 
 let headers = {
@@ -223,11 +223,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/posts/all/est" \
+    -G "http://blog.wpwink.com/api/posts/all/praesentium" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/posts/all/est"
+    "http://blog.wpwink.com/api/posts/all/praesentium"
 );
 
 let headers = {
@@ -280,11 +280,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/posts/published/autem" \
+    -G "http://blog.wpwink.com/api/posts/published/libero" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/posts/published/autem"
+    "http://blog.wpwink.com/api/posts/published/libero"
 );
 
 let headers = {
@@ -337,11 +337,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://localhost:8000/api/posts/unpublished/fugit" \
+    -G "http://blog.wpwink.com/api/posts/unpublished/est" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/posts/unpublished/fugit"
+    "http://blog.wpwink.com/api/posts/unpublished/est"
 );
 
 let headers = {
@@ -394,14 +394,14 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://localhost:8000/api/posts" \
+    "http://blog.wpwink.com/api/posts" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: application/json" \
-    -F "title=ea" \
-    -F "description=ipsum" \
-    -F "feature_image=@C:\Users\Windows\AppData\Local\Temp\php4C49.tmp" </code></pre>
+    -F "title=omnis" \
+    -F "description=aut" \
+    -F "feature_image=@C:\Users\Windows\AppData\Local\Temp\php6E1F.tmp" </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/posts"
+    "http://blog.wpwink.com/api/posts"
 );
 
 let headers = {
@@ -410,8 +410,8 @@ let headers = {
 };
 
 const body = new FormData();
-body.append('title', 'ea');
-body.append('description', 'ipsum');
+body.append('title', 'omnis');
+body.append('description', 'aut');
 body.append('feature_image', document.querySelector('input[name="feature_image"]').files[0]);
 
 fetch(url, {
@@ -464,11 +464,11 @@ The value must be an image.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://localhost:8000/api/posts/minus/update" \
+    "http://blog.wpwink.com/api/posts/quam/update" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/posts/minus/update"
+    "http://blog.wpwink.com/api/posts/quam/update"
 );
 
 let headers = {
@@ -511,11 +511,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://localhost:8000/api/posts/cumque/delete" \
+    "http://blog.wpwink.com/api/posts/fugiat/delete" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/posts/cumque/delete"
+    "http://blog.wpwink.com/api/posts/fugiat/delete"
 );
 
 let headers = {
@@ -559,17 +559,17 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://localhost:8000/api/auth/user/registration" \
+    "http://blog.wpwink.com/api/auth/user/registration" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: application/json" \
-    -F "name=nostrum" \
-    -F "email=qmuller@example.net" \
-    -F "phone=6.28875515" \
-    -F "password=illo" \
-    -F "password_confirmation=at" \
-    -F "profile_photo=@C:\Users\Windows\AppData\Local\Temp\php4BC9.tmp" </code></pre>
+    -F "name=est" \
+    -F "email=ondricka.darryl@example.org" \
+    -F "phone=707.982568" \
+    -F "password=quia" \
+    -F "password_confirmation=corporis" \
+    -F "profile_photo=@C:\Users\Windows\AppData\Local\Temp\php6D71.tmp" </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/auth/user/registration"
+    "http://blog.wpwink.com/api/auth/user/registration"
 );
 
 let headers = {
@@ -578,11 +578,11 @@ let headers = {
 };
 
 const body = new FormData();
-body.append('name', 'nostrum');
-body.append('email', 'qmuller@example.net');
-body.append('phone', '6.28875515');
-body.append('password', 'illo');
-body.append('password_confirmation', 'at');
+body.append('name', 'est');
+body.append('email', 'ondricka.darryl@example.org');
+body.append('phone', '707.982568');
+body.append('password', 'quia');
+body.append('password_confirmation', 'corporis');
 body.append('profile_photo', document.querySelector('input[name="profile_photo"]').files[0]);
 
 fetch(url, {
@@ -647,17 +647,17 @@ The value must be an image.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://localhost:8000/api/auth/author/registration" \
+    "http://blog.wpwink.com/api/auth/author/registration" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: application/json" \
-    -F "name=officiis" \
-    -F "email=ledner.jalyn@example.com" \
-    -F "phone=86.26505078" \
-    -F "password=similique" \
-    -F "password_confirmation=ipsum" \
-    -F "profile_photo=@C:\Users\Windows\AppData\Local\Temp\php4BE9.tmp" </code></pre>
+    -F "name=cumque" \
+    -F "email=lgorczany@example.com" \
+    -F "phone=15448247.558709" \
+    -F "password=aliquam" \
+    -F "password_confirmation=esse" \
+    -F "profile_photo=@C:\Users\Windows\AppData\Local\Temp\php6D91.tmp" </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/auth/author/registration"
+    "http://blog.wpwink.com/api/auth/author/registration"
 );
 
 let headers = {
@@ -666,11 +666,11 @@ let headers = {
 };
 
 const body = new FormData();
-body.append('name', 'officiis');
-body.append('email', 'ledner.jalyn@example.com');
-body.append('phone', '86.26505078');
-body.append('password', 'similique');
-body.append('password_confirmation', 'ipsum');
+body.append('name', 'cumque');
+body.append('email', 'lgorczany@example.com');
+body.append('phone', '15448247.558709');
+body.append('password', 'aliquam');
+body.append('password_confirmation', 'esse');
 body.append('profile_photo', document.querySelector('input[name="profile_photo"]').files[0]);
 
 fetch(url, {
@@ -735,17 +735,17 @@ The value must be an image.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://localhost:8000/api/auth/editor/registration" \
+    "http://blog.wpwink.com/api/auth/editor/registration" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: application/json" \
-    -F "name=voluptatem" \
-    -F "email=anastacio.wisoky@example.com" \
-    -F "phone=3" \
-    -F "password=et" \
-    -F "password_confirmation=eum" \
-    -F "profile_photo=@C:\Users\Windows\AppData\Local\Temp\php4BEA.tmp" </code></pre>
+    -F "name=sed" \
+    -F "email=nikolaus.houston@example.net" \
+    -F "phone=369229799.3" \
+    -F "password=aut" \
+    -F "password_confirmation=accusantium" \
+    -F "profile_photo=@C:\Users\Windows\AppData\Local\Temp\php6DA1.tmp" </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/auth/editor/registration"
+    "http://blog.wpwink.com/api/auth/editor/registration"
 );
 
 let headers = {
@@ -754,11 +754,11 @@ let headers = {
 };
 
 const body = new FormData();
-body.append('name', 'voluptatem');
-body.append('email', 'anastacio.wisoky@example.com');
-body.append('phone', '3');
-body.append('password', 'et');
-body.append('password_confirmation', 'eum');
+body.append('name', 'sed');
+body.append('email', 'nikolaus.houston@example.net');
+body.append('phone', '369229799.3');
+body.append('password', 'aut');
+body.append('password_confirmation', 'accusantium');
 body.append('profile_photo', document.querySelector('input[name="profile_photo"]').files[0]);
 
 fetch(url, {
@@ -823,13 +823,13 @@ The value must be an image.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://localhost:8000/api/auth/login" \
+    "http://blog.wpwink.com/api/auth/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"nico.hill@example.com","password":"voluptates"}'
+    -d '{"email":"abbie.stehr@example.org","password":"eius"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/auth/login"
+    "http://blog.wpwink.com/api/auth/login"
 );
 
 let headers = {
@@ -838,8 +838,8 @@ let headers = {
 };
 
 let body = {
-    "email": "nico.hill@example.com",
-    "password": "voluptates"
+    "email": "abbie.stehr@example.org",
+    "password": "eius"
 }
 
 fetch(url, {
@@ -885,11 +885,11 @@ The value must be a valid email address.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://localhost:8000/api/auth/logout" \
+    "http://blog.wpwink.com/api/auth/logout" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/auth/logout"
+    "http://blog.wpwink.com/api/auth/logout"
 );
 
 let headers = {

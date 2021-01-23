@@ -14,12 +14,12 @@ curl -X POST \
     "http://localhost:8000/api/auth/user/registration" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: application/json" \
-    -F "name=eveniet" \
-    -F "email=germaine.schinner@example.com" \
-    -F "phone=1065891.279" \
-    -F "password=quisquam" \
-    -F "password_confirmation=aut" \
-    -F "profile_photo=@C:\Users\Windows\AppData\Local\Temp\php610.tmp" 
+    -F "name=modi" \
+    -F "email=stracke.marina@example.net" \
+    -F "phone=545576070.75058" \
+    -F "password=voluptatem" \
+    -F "password_confirmation=voluptas" \
+    -F "profile_photo=@C:\Users\Windows\AppData\Local\Temp\php115F.tmp" 
 ```
 
 ```javascript
@@ -33,11 +33,11 @@ let headers = {
 };
 
 const body = new FormData();
-body.append('name', 'eveniet');
-body.append('email', 'germaine.schinner@example.com');
-body.append('phone', '1065891.279');
-body.append('password', 'quisquam');
-body.append('password_confirmation', 'aut');
+body.append('name', 'modi');
+body.append('email', 'stracke.marina@example.net');
+body.append('phone', '545576070.75058');
+body.append('password', 'voluptatem');
+body.append('password_confirmation', 'voluptas');
 body.append('profile_photo', document.querySelector('input[name="profile_photo"]').files[0]);
 
 fetch(url, {
@@ -114,12 +114,12 @@ curl -X POST \
     "http://localhost:8000/api/auth/author/registration" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: application/json" \
-    -F "name=ullam" \
-    -F "email=jaida.weber@example.org" \
-    -F "phone=62534738.227598" \
-    -F "password=consequuntur" \
-    -F "password_confirmation=deleniti" \
-    -F "profile_photo=@C:\Users\Windows\AppData\Local\Temp\php621.tmp" 
+    -F "name=nostrum" \
+    -F "email=billy.considine@example.com" \
+    -F "phone=182474.543013" \
+    -F "password=et" \
+    -F "password_confirmation=id" \
+    -F "profile_photo=@C:\Users\Windows\AppData\Local\Temp\php116F.tmp" 
 ```
 
 ```javascript
@@ -133,11 +133,11 @@ let headers = {
 };
 
 const body = new FormData();
-body.append('name', 'ullam');
-body.append('email', 'jaida.weber@example.org');
-body.append('phone', '62534738.227598');
-body.append('password', 'consequuntur');
-body.append('password_confirmation', 'deleniti');
+body.append('name', 'nostrum');
+body.append('email', 'billy.considine@example.com');
+body.append('phone', '182474.543013');
+body.append('password', 'et');
+body.append('password_confirmation', 'id');
 body.append('profile_photo', document.querySelector('input[name="profile_photo"]').files[0]);
 
 fetch(url, {
@@ -214,12 +214,12 @@ curl -X POST \
     "http://localhost:8000/api/auth/editor/registration" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: application/json" \
-    -F "name=officiis" \
-    -F "email=ollie.anderson@example.net" \
-    -F "phone=269.38" \
-    -F "password=et" \
-    -F "password_confirmation=ab" \
-    -F "profile_photo=@C:\Users\Windows\AppData\Local\Temp\php631.tmp" 
+    -F "name=omnis" \
+    -F "email=lkirlin@example.net" \
+    -F "phone=187387417.19" \
+    -F "password=dolorum" \
+    -F "password_confirmation=natus" \
+    -F "profile_photo=@C:\Users\Windows\AppData\Local\Temp\php1180.tmp" 
 ```
 
 ```javascript
@@ -233,11 +233,11 @@ let headers = {
 };
 
 const body = new FormData();
-body.append('name', 'officiis');
-body.append('email', 'ollie.anderson@example.net');
-body.append('phone', '269.38');
-body.append('password', 'et');
-body.append('password_confirmation', 'ab');
+body.append('name', 'omnis');
+body.append('email', 'lkirlin@example.net');
+body.append('phone', '187387417.19');
+body.append('password', 'dolorum');
+body.append('password_confirmation', 'natus');
 body.append('profile_photo', document.querySelector('input[name="profile_photo"]').files[0]);
 
 fetch(url, {
@@ -314,7 +314,7 @@ curl -X POST \
     "http://localhost:8000/api/auth/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"wolf.destin@example.com","password":"aspernatur"}'
+    -d '{"email":"ularkin@example.org","password":"aut"}'
 
 ```
 
@@ -329,8 +329,8 @@ let headers = {
 };
 
 let body = {
-    "email": "wolf.destin@example.com",
-    "password": "aspernatur"
+    "email": "ularkin@example.org",
+    "password": "aut"
 }
 
 fetch(url, {
@@ -372,6 +372,64 @@ The value must be a valid email address.</p>
 <br>
 </p>
 
+</form>
+
+
+## Logout
+
+<small class="badge badge-darkred">requires authentication</small>
+
+
+
+> Example request:
+
+```bash
+curl -X POST \
+    "http://localhost:8000/api/auth/logout" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "http://localhost:8000/api/auth/logout"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response => response.json());
+```
+
+
+<div id="execution-results-POSTapi-auth-logout" hidden>
+    <blockquote>Received response<span id="execution-response-status-POSTapi-auth-logout"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-auth-logout"></code></pre>
+</div>
+<div id="execution-error-POSTapi-auth-logout" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-auth-logout"></code></pre>
+</div>
+<form id="form-POSTapi-auth-logout" data-method="POST" data-path="api/auth/logout" data-authed="1" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-auth-logout', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-auth-logout" onclick="tryItOut('POSTapi-auth-logout');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-auth-logout" onclick="cancelTryOut('POSTapi-auth-logout');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-auth-logout" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-black">POST</small>
+ <b><code>api/auth/logout</code></b>
+</p>
+<p>
+<label id="auth-POSTapi-auth-logout" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="POSTapi-auth-logout" data-component="header"></label>
+</p>
 </form>
 
 

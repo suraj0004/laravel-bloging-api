@@ -3,17 +3,14 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Auth;
-use Illuminate\Http\JsonResponse;
-
-use App\Models\User;
-
-use App\Http\Requests\RegistrationRequest;
 use App\Http\Requests\LoginRequest;
-
-use  App\Http\Resources\UserResource;
-
+use App\Http\Requests\RegistrationRequest;
+use App\Http\Resources\UserResource;
+use App\Models\User;
+use Auth;
+use Exception;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 
 /**
  * @group Registration | Login
@@ -32,12 +29,12 @@ class AuthController extends Controller
         $token = $user->createToken(User::TOKEN_NAME)->plainTextToken;
 
         return (new UserResource($user))->additional([
-            "message" =>  "User Registered Successfully",
-            "token" => $token
+            "message" => "User Registered Successfully",
+            "token" => $token,
         ]);
     }
 
-     /**
+    /**
      * Author Registration
      */
     public function authorRegistration(RegistrationRequest $request)
@@ -46,12 +43,12 @@ class AuthController extends Controller
         $token = $user->createToken(User::TOKEN_NAME)->plainTextToken;
 
         return (new UserResource($user))->additional([
-            "message" =>  "Author Registered Successfully",
-            "token" => $token
+            "message" => "Author Registered Successfully",
+            "token" => $token,
         ]);
     }
 
-     /**
+    /**
      * Editor Registration
      */
     public function editorRegistration(RegistrationRequest $request)
@@ -60,12 +57,12 @@ class AuthController extends Controller
         $token = $user->createToken(User::TOKEN_NAME)->plainTextToken;
 
         return (new UserResource($user))->additional([
-            "message" =>  "Editor Registered Successfully",
-            "token" => $token
+            "message" => "Editor Registered Successfully",
+            "token" => $token,
         ]);
     }
 
-     /**
+    /**
      * Login
      */
     public function login(LoginRequest $request)
@@ -82,8 +79,28 @@ class AuthController extends Controller
         $token = $user->createToken(User::TOKEN_NAME)->plainTextToken;
 
         return (new UserResource($user))->additional([
-            "message" =>  "User Login Successfully",
-            "token" => $token
+            "message" => "User Login Successfully",
+            "token" => $token,
         ]);
+    }
+
+    /**
+     * Logout
+     * @authenticated
+     */
+    public function logout(Request $request)
+    {
+        try {
+            $request->user()->currentAccessToken()->delete();
+        } catch (Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => "Opps Something went wrong",
+            ], JsonResponse::HTTP_INTERNAL_SERVER_ERROR);
+        }
+        return response()->json([
+            'success' => true,
+            'message' => "Logout Successfully.",
+        ], JsonResponse::HTTP_OK);
     }
 }

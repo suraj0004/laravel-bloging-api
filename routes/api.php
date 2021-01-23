@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
-use App\Http\Controllers\Api\User\PostController;
+use App\Http\Controllers\Api\PostController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -15,9 +15,6 @@ use App\Http\Controllers\Api\User\PostController;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
 
 Route::group(['prefix' => 'auth'], function () {
 
@@ -26,10 +23,11 @@ Route::group(['prefix' => 'auth'], function () {
     Route::post('editor/registration',[AuthController::class, 'editorRegistration']);
 
     Route::post('login',[AuthController::class, 'login']);
+    Route::post('logout',[AuthController::class, 'logout']);
 
 });
 
-Route::group(['middleware' => ['auth:sanctum'], 'prefix' => 'user-module' ], function () {
-    Route::apiResource('post', PostController::class);
+Route::group(['middleware' => ['auth:sanctum'] ], function () {
+    // Route::apiResource('post', PostController::class);
 });
 

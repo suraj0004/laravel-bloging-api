@@ -44,7 +44,7 @@
                             <li><a href='http://github.com/knuckleswtf/scribe'>Documentation powered by Scribe ✍</a></li>
                     </ul>
             <ul class="toc-footer" id="last-updated">
-            <li>Last updated: January 19 2021</li>
+            <li>Last updated: January 23 2021</li>
         </ul>
 </div>
 <div class="page-wrapper">
@@ -56,165 +56,24 @@
 You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
 <script>
-    var baseUrl = "http://blog.wpwink.com";
+    var baseUrl = "http://localhost:8000";
 </script>
 <script src="{{ asset("vendor/scribe/js/tryitout-2.4.2.js") }}"></script>
 <blockquote>
 <p>Base URL</p>
 </blockquote>
-<pre><code class="language-yaml">http://blog.wpwink.com</code></pre><h1>Authenticating requests</h1>
-<p>This API is not authenticated.</p><h1>Authentication</h1>
-<p>APIs for managing authentication</p>
-<h2>User Registration</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X POST \
-    "http://blog.wpwink.com/api/auth/user/registration" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json" \
-    -d '{"name":"aliquid","email":"cole.isidro@example.com","phone":1800.5,"password":"harum","password_confirmation":"optio"}'
-</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://blog.wpwink.com/api/auth/user/registration"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "name": "aliquid",
-    "email": "cole.isidro@example.com",
-    "phone": 1800.5,
-    "password": "harum",
-    "password_confirmation": "optio"
-}
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre>
-<div id="execution-results-POSTapi-auth-user-registration" hidden>
-    <blockquote>Received response<span id="execution-response-status-POSTapi-auth-user-registration"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-auth-user-registration"></code></pre>
-</div>
-<div id="execution-error-POSTapi-auth-user-registration" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-auth-user-registration"></code></pre>
-</div>
-<form id="form-POSTapi-auth-user-registration" data-method="POST" data-path="api/auth/user/registration" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-auth-user-registration', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-auth-user-registration" onclick="tryItOut('POSTapi-auth-user-registration');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-auth-user-registration" onclick="cancelTryOut('POSTapi-auth-user-registration');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-auth-user-registration" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-black">POST</small>
- <b><code>api/auth/user/registration</code></b>
-</p>
-<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-<p>
-<b><code>name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="name" data-endpoint="POSTapi-auth-user-registration" data-component="body" required  hidden>
-<br>
-</p>
-<p>
-<b><code>email</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="email" data-endpoint="POSTapi-auth-user-registration" data-component="body" required  hidden>
-<br>
-The value must be a valid email address.</p>
-<p>
-<b><code>phone</code></b>&nbsp;&nbsp;<small>number</small>  &nbsp;
-<input type="number" name="phone" data-endpoint="POSTapi-auth-user-registration" data-component="body" required  hidden>
-<br>
-</p>
-<p>
-<b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="password" data-endpoint="POSTapi-auth-user-registration" data-component="body" required  hidden>
-<br>
-</p>
-<p>
-<b><code>password_confirmation</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="password_confirmation" data-endpoint="POSTapi-auth-user-registration" data-component="body" required  hidden>
-<br>
-</p>
-
-</form>
-<h2>User Login</h2>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X POST \
-    "http://blog.wpwink.com/api/auth/user/login" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json" \
-    -d '{"email":"tgreenholt@example.org","password":"ut"}'
-</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "http://blog.wpwink.com/api/auth/user/login"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "email": "tgreenholt@example.org",
-    "password": "ut"
-}
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre>
-<div id="execution-results-POSTapi-auth-user-login" hidden>
-    <blockquote>Received response<span id="execution-response-status-POSTapi-auth-user-login"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-auth-user-login"></code></pre>
-</div>
-<div id="execution-error-POSTapi-auth-user-login" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-auth-user-login"></code></pre>
-</div>
-<form id="form-POSTapi-auth-user-login" data-method="POST" data-path="api/auth/user/login" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-auth-user-login', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-auth-user-login" onclick="tryItOut('POSTapi-auth-user-login');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-auth-user-login" onclick="cancelTryOut('POSTapi-auth-user-login');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-auth-user-login" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-black">POST</small>
- <b><code>api/auth/user/login</code></b>
-</p>
-<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-<p>
-<b><code>email</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="email" data-endpoint="POSTapi-auth-user-login" data-component="body" required  hidden>
-<br>
-The value must be a valid email address.</p>
-<p>
-<b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="password" data-endpoint="POSTapi-auth-user-login" data-component="body" required  hidden>
-<br>
-</p>
-
-</form><h1>Endpoints</h1>
+<pre><code class="language-yaml">http://localhost:8000</code></pre><h1>Authenticating requests</h1>
+<p>This API is not authenticated.</p><h1>Endpoints</h1>
 <h2>api/user</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://blog.wpwink.com/api/user" \
+    -G "http://localhost:8000/api/user" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://blog.wpwink.com/api/user"
+    "http://localhost:8000/api/user"
 );
 
 let headers = {
@@ -258,11 +117,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://blog.wpwink.com/api/user-module/post" \
+    -G "http://localhost:8000/api/user-module/post" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://blog.wpwink.com/api/user-module/post"
+    "http://localhost:8000/api/user-module/post"
 );
 
 let headers = {
@@ -309,13 +168,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "http://blog.wpwink.com/api/user-module/post" \
+    "http://localhost:8000/api/user-module/post" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"title":"eos","description":"sunt"}'
+    -d '{"title":"consequatur","description":"natus"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://blog.wpwink.com/api/user-module/post"
+    "http://localhost:8000/api/user-module/post"
 );
 
 let headers = {
@@ -324,8 +183,8 @@ let headers = {
 };
 
 let body = {
-    "title": "eos",
-    "description": "sunt"
+    "title": "consequatur",
+    "description": "natus"
 }
 
 fetch(url, {
@@ -373,11 +232,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "http://blog.wpwink.com/api/user-module/post/magnam" \
+    -G "http://localhost:8000/api/user-module/post/pariatur" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://blog.wpwink.com/api/user-module/post/magnam"
+    "http://localhost:8000/api/user-module/post/pariatur"
 );
 
 let headers = {
@@ -426,11 +285,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "http://blog.wpwink.com/api/user-module/post/sit" \
+    "http://localhost:8000/api/user-module/post/magnam" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://blog.wpwink.com/api/user-module/post/sit"
+    "http://localhost:8000/api/user-module/post/magnam"
 );
 
 let headers = {
@@ -477,11 +336,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "http://blog.wpwink.com/api/user-module/post/maxime" \
+    "http://localhost:8000/api/user-module/post/voluptatem" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "http://blog.wpwink.com/api/user-module/post/maxime"
+    "http://localhost:8000/api/user-module/post/voluptatem"
 );
 
 let headers = {
@@ -518,6 +377,332 @@ fetch(url, {
 <input type="text" name="post" data-endpoint="DELETEapi-user-module-post--post-" data-component="url" required  hidden>
 <br>
 </p>
+</form><h1>Registration | Login</h1>
+<p>APIs for managing authentication</p>
+<h2>User Registration</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost:8000/api/auth/user/registration" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: application/json" \
+    -F "name=eveniet" \
+    -F "email=germaine.schinner@example.com" \
+    -F "phone=1065891.279" \
+    -F "password=quisquam" \
+    -F "password_confirmation=aut" \
+    -F "profile_photo=@C:\Users\Windows\AppData\Local\Temp\php610.tmp" </code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/auth/user/registration"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "application/json",
+};
+
+const body = new FormData();
+body.append('name', 'eveniet');
+body.append('email', 'germaine.schinner@example.com');
+body.append('phone', '1065891.279');
+body.append('password', 'quisquam');
+body.append('password_confirmation', 'aut');
+body.append('profile_photo', document.querySelector('input[name="profile_photo"]').files[0]);
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body,
+}).then(response =&gt; response.json());</code></pre>
+<div id="execution-results-POSTapi-auth-user-registration" hidden>
+    <blockquote>Received response<span id="execution-response-status-POSTapi-auth-user-registration"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-auth-user-registration"></code></pre>
+</div>
+<div id="execution-error-POSTapi-auth-user-registration" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-auth-user-registration"></code></pre>
+</div>
+<form id="form-POSTapi-auth-user-registration" data-method="POST" data-path="api/auth/user/registration" data-authed="0" data-hasfiles="1" data-headers='{"Content-Type":"multipart\/form-data","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-auth-user-registration', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-auth-user-registration" onclick="tryItOut('POSTapi-auth-user-registration');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-auth-user-registration" onclick="cancelTryOut('POSTapi-auth-user-registration');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-auth-user-registration" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-black">POST</small>
+ <b><code>api/auth/user/registration</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="name" data-endpoint="POSTapi-auth-user-registration" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>email</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="email" data-endpoint="POSTapi-auth-user-registration" data-component="body" required  hidden>
+<br>
+The value must be a valid email address.</p>
+<p>
+<b><code>phone</code></b>&nbsp;&nbsp;<small>number</small>  &nbsp;
+<input type="number" name="phone" data-endpoint="POSTapi-auth-user-registration" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="password" data-endpoint="POSTapi-auth-user-registration" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>password_confirmation</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="password_confirmation" data-endpoint="POSTapi-auth-user-registration" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>profile_photo</code></b>&nbsp;&nbsp;<small>file</small>  &nbsp;
+<input type="file" name="profile_photo" data-endpoint="POSTapi-auth-user-registration" data-component="body" required  hidden>
+<br>
+The value must be an image.</p>
+
+</form>
+<h2>Author Registration</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost:8000/api/auth/author/registration" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: application/json" \
+    -F "name=ullam" \
+    -F "email=jaida.weber@example.org" \
+    -F "phone=62534738.227598" \
+    -F "password=consequuntur" \
+    -F "password_confirmation=deleniti" \
+    -F "profile_photo=@C:\Users\Windows\AppData\Local\Temp\php621.tmp" </code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/auth/author/registration"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "application/json",
+};
+
+const body = new FormData();
+body.append('name', 'ullam');
+body.append('email', 'jaida.weber@example.org');
+body.append('phone', '62534738.227598');
+body.append('password', 'consequuntur');
+body.append('password_confirmation', 'deleniti');
+body.append('profile_photo', document.querySelector('input[name="profile_photo"]').files[0]);
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body,
+}).then(response =&gt; response.json());</code></pre>
+<div id="execution-results-POSTapi-auth-author-registration" hidden>
+    <blockquote>Received response<span id="execution-response-status-POSTapi-auth-author-registration"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-auth-author-registration"></code></pre>
+</div>
+<div id="execution-error-POSTapi-auth-author-registration" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-auth-author-registration"></code></pre>
+</div>
+<form id="form-POSTapi-auth-author-registration" data-method="POST" data-path="api/auth/author/registration" data-authed="0" data-hasfiles="1" data-headers='{"Content-Type":"multipart\/form-data","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-auth-author-registration', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-auth-author-registration" onclick="tryItOut('POSTapi-auth-author-registration');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-auth-author-registration" onclick="cancelTryOut('POSTapi-auth-author-registration');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-auth-author-registration" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-black">POST</small>
+ <b><code>api/auth/author/registration</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="name" data-endpoint="POSTapi-auth-author-registration" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>email</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="email" data-endpoint="POSTapi-auth-author-registration" data-component="body" required  hidden>
+<br>
+The value must be a valid email address.</p>
+<p>
+<b><code>phone</code></b>&nbsp;&nbsp;<small>number</small>  &nbsp;
+<input type="number" name="phone" data-endpoint="POSTapi-auth-author-registration" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="password" data-endpoint="POSTapi-auth-author-registration" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>password_confirmation</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="password_confirmation" data-endpoint="POSTapi-auth-author-registration" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>profile_photo</code></b>&nbsp;&nbsp;<small>file</small>  &nbsp;
+<input type="file" name="profile_photo" data-endpoint="POSTapi-auth-author-registration" data-component="body" required  hidden>
+<br>
+The value must be an image.</p>
+
+</form>
+<h2>Editor Registration</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost:8000/api/auth/editor/registration" \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: application/json" \
+    -F "name=officiis" \
+    -F "email=ollie.anderson@example.net" \
+    -F "phone=269.38" \
+    -F "password=et" \
+    -F "password_confirmation=ab" \
+    -F "profile_photo=@C:\Users\Windows\AppData\Local\Temp\php631.tmp" </code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/auth/editor/registration"
+);
+
+let headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "application/json",
+};
+
+const body = new FormData();
+body.append('name', 'officiis');
+body.append('email', 'ollie.anderson@example.net');
+body.append('phone', '269.38');
+body.append('password', 'et');
+body.append('password_confirmation', 'ab');
+body.append('profile_photo', document.querySelector('input[name="profile_photo"]').files[0]);
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body,
+}).then(response =&gt; response.json());</code></pre>
+<div id="execution-results-POSTapi-auth-editor-registration" hidden>
+    <blockquote>Received response<span id="execution-response-status-POSTapi-auth-editor-registration"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-auth-editor-registration"></code></pre>
+</div>
+<div id="execution-error-POSTapi-auth-editor-registration" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-auth-editor-registration"></code></pre>
+</div>
+<form id="form-POSTapi-auth-editor-registration" data-method="POST" data-path="api/auth/editor/registration" data-authed="0" data-hasfiles="1" data-headers='{"Content-Type":"multipart\/form-data","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-auth-editor-registration', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-auth-editor-registration" onclick="tryItOut('POSTapi-auth-editor-registration');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-auth-editor-registration" onclick="cancelTryOut('POSTapi-auth-editor-registration');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-auth-editor-registration" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-black">POST</small>
+ <b><code>api/auth/editor/registration</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="name" data-endpoint="POSTapi-auth-editor-registration" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>email</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="email" data-endpoint="POSTapi-auth-editor-registration" data-component="body" required  hidden>
+<br>
+The value must be a valid email address.</p>
+<p>
+<b><code>phone</code></b>&nbsp;&nbsp;<small>number</small>  &nbsp;
+<input type="number" name="phone" data-endpoint="POSTapi-auth-editor-registration" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="password" data-endpoint="POSTapi-auth-editor-registration" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>password_confirmation</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="password_confirmation" data-endpoint="POSTapi-auth-editor-registration" data-component="body" required  hidden>
+<br>
+</p>
+<p>
+<b><code>profile_photo</code></b>&nbsp;&nbsp;<small>file</small>  &nbsp;
+<input type="file" name="profile_photo" data-endpoint="POSTapi-auth-editor-registration" data-component="body" required  hidden>
+<br>
+The value must be an image.</p>
+
+</form>
+<h2>Login</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost:8000/api/auth/login" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"email":"wolf.destin@example.com","password":"aspernatur"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/auth/login"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "email": "wolf.destin@example.com",
+    "password": "aspernatur"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+<div id="execution-results-POSTapi-auth-login" hidden>
+    <blockquote>Received response<span id="execution-response-status-POSTapi-auth-login"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-auth-login"></code></pre>
+</div>
+<div id="execution-error-POSTapi-auth-login" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-auth-login"></code></pre>
+</div>
+<form id="form-POSTapi-auth-login" data-method="POST" data-path="api/auth/login" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-auth-login', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-auth-login" onclick="tryItOut('POSTapi-auth-login');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-auth-login" onclick="cancelTryOut('POSTapi-auth-login');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-auth-login" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-black">POST</small>
+ <b><code>api/auth/login</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>email</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="email" data-endpoint="POSTapi-auth-login" data-component="body" required  hidden>
+<br>
+The value must be a valid email address.</p>
+<p>
+<b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="password" data-endpoint="POSTapi-auth-login" data-component="body" required  hidden>
+<br>
+</p>
+
 </form>
     </div>
     <div class="dark-box">

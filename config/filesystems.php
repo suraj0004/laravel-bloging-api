@@ -42,6 +42,41 @@ return [
             'visibility' => 'public',
         ],
 
+        'admins' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/images/admins'),
+            'url' => env('APP_URL').'/storage/images/admins',
+            'visibility' => 'public',
+        ],
+
+        'authors' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/images/authors'),
+            'url' => env('APP_URL').'/storage/images/authors',
+            'visibility' => 'public',
+        ],
+
+        'editors' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/images/editors'),
+            'url' => env('APP_URL').'/storage/images/editors',
+            'visibility' => 'public',
+        ],
+
+        'users' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/images/users'),
+            'url' => env('APP_URL').'/storage/images/users',
+            'visibility' => 'public',
+        ],
+
+        'posts' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/images/posts'),
+            'url' => env('APP_URL').'/storage/images/posts',
+            'visibility' => 'public',
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

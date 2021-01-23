@@ -22,7 +22,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['prefix' => 'auth'], function () {
 
     Route::post('user/registration',[AuthController::class, 'userRegistration']);
-    Route::post('user/login',[AuthController::class, 'userLogin']);
+    Route::post('author/registration',[AuthController::class, 'authorRegistration']);
+    Route::post('editor/registration',[AuthController::class, 'editorRegistration']);
+
+    Route::post('login',[AuthController::class, 'login']);
 
 });
 

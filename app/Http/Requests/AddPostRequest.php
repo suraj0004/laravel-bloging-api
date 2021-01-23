@@ -6,6 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\JsonResponse;
+use Config;
 
 class AddPostRequest extends FormRequest
 {
@@ -28,7 +29,8 @@ class AddPostRequest extends FormRequest
     {
         return [
             "title" => "required|string",
-            "description" => "required|string"
+            "description" => "required|string",
+            "feature_image" => "required|image"
         ];
     }
 
@@ -38,6 +40,7 @@ class AddPostRequest extends FormRequest
             "user_id" => auth()->user()->id,
             "title" => $this->title,
             "description" => $this->description,
+            "feature_image" => saveImage(Config::get("constant.DISK.POST"), auth()->user()->id, $this->feature_image)
         ];
     }
 

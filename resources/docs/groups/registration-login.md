@@ -14,12 +14,12 @@ curl -X POST \
     "http://localhost:8000/api/auth/user/registration" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: application/json" \
-    -F "name=modi" \
-    -F "email=stracke.marina@example.net" \
-    -F "phone=545576070.75058" \
-    -F "password=voluptatem" \
-    -F "password_confirmation=voluptas" \
-    -F "profile_photo=@C:\Users\Windows\AppData\Local\Temp\php115F.tmp" 
+    -F "name=nostrum" \
+    -F "email=qmuller@example.net" \
+    -F "phone=6.28875515" \
+    -F "password=illo" \
+    -F "password_confirmation=at" \
+    -F "profile_photo=@C:\Users\Windows\AppData\Local\Temp\php4BC9.tmp" 
 ```
 
 ```javascript
@@ -33,11 +33,11 @@ let headers = {
 };
 
 const body = new FormData();
-body.append('name', 'modi');
-body.append('email', 'stracke.marina@example.net');
-body.append('phone', '545576070.75058');
-body.append('password', 'voluptatem');
-body.append('password_confirmation', 'voluptas');
+body.append('name', 'nostrum');
+body.append('email', 'qmuller@example.net');
+body.append('phone', '6.28875515');
+body.append('password', 'illo');
+body.append('password_confirmation', 'at');
 body.append('profile_photo', document.querySelector('input[name="profile_photo"]').files[0]);
 
 fetch(url, {
@@ -114,12 +114,12 @@ curl -X POST \
     "http://localhost:8000/api/auth/author/registration" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: application/json" \
-    -F "name=nostrum" \
-    -F "email=billy.considine@example.com" \
-    -F "phone=182474.543013" \
-    -F "password=et" \
-    -F "password_confirmation=id" \
-    -F "profile_photo=@C:\Users\Windows\AppData\Local\Temp\php116F.tmp" 
+    -F "name=officiis" \
+    -F "email=ledner.jalyn@example.com" \
+    -F "phone=86.26505078" \
+    -F "password=similique" \
+    -F "password_confirmation=ipsum" \
+    -F "profile_photo=@C:\Users\Windows\AppData\Local\Temp\php4BE9.tmp" 
 ```
 
 ```javascript
@@ -133,11 +133,11 @@ let headers = {
 };
 
 const body = new FormData();
-body.append('name', 'nostrum');
-body.append('email', 'billy.considine@example.com');
-body.append('phone', '182474.543013');
-body.append('password', 'et');
-body.append('password_confirmation', 'id');
+body.append('name', 'officiis');
+body.append('email', 'ledner.jalyn@example.com');
+body.append('phone', '86.26505078');
+body.append('password', 'similique');
+body.append('password_confirmation', 'ipsum');
 body.append('profile_photo', document.querySelector('input[name="profile_photo"]').files[0]);
 
 fetch(url, {
@@ -214,12 +214,12 @@ curl -X POST \
     "http://localhost:8000/api/auth/editor/registration" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: application/json" \
-    -F "name=omnis" \
-    -F "email=lkirlin@example.net" \
-    -F "phone=187387417.19" \
-    -F "password=dolorum" \
-    -F "password_confirmation=natus" \
-    -F "profile_photo=@C:\Users\Windows\AppData\Local\Temp\php1180.tmp" 
+    -F "name=voluptatem" \
+    -F "email=anastacio.wisoky@example.com" \
+    -F "phone=3" \
+    -F "password=et" \
+    -F "password_confirmation=eum" \
+    -F "profile_photo=@C:\Users\Windows\AppData\Local\Temp\php4BEA.tmp" 
 ```
 
 ```javascript
@@ -233,11 +233,11 @@ let headers = {
 };
 
 const body = new FormData();
-body.append('name', 'omnis');
-body.append('email', 'lkirlin@example.net');
-body.append('phone', '187387417.19');
-body.append('password', 'dolorum');
-body.append('password_confirmation', 'natus');
+body.append('name', 'voluptatem');
+body.append('email', 'anastacio.wisoky@example.com');
+body.append('phone', '3');
+body.append('password', 'et');
+body.append('password_confirmation', 'eum');
 body.append('profile_photo', document.querySelector('input[name="profile_photo"]').files[0]);
 
 fetch(url, {
@@ -314,7 +314,7 @@ curl -X POST \
     "http://localhost:8000/api/auth/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"ularkin@example.org","password":"aut"}'
+    -d '{"email":"nico.hill@example.com","password":"voluptates"}'
 
 ```
 
@@ -329,8 +329,8 @@ let headers = {
 };
 
 let body = {
-    "email": "ularkin@example.org",
-    "password": "aut"
+    "email": "nico.hill@example.com",
+    "password": "voluptates"
 }
 
 fetch(url, {

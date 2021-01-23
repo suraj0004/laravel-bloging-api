@@ -28,6 +28,16 @@ Route::group(['prefix' => 'auth'], function () {
 });
 
 Route::group(['middleware' => ['auth:sanctum'] ], function () {
-    // Route::apiResource('post', PostController::class);
+
+    Route::get('posts/all',[ PostController::class, 'all']);
+    Route::get('posts/published',[ PostController::class, 'published']);
+    Route::get('posts/unpublished',[ PostController::class, 'unpublished']);
+    Route::get('posts/all/{id}',[ PostController::class, 'showFromAll']);
+    Route::get('posts/published/{id}',[ PostController::class, 'showFromPublished']);
+    Route::get('posts/unpublished/{id}',[ PostController::class, 'showFromUnpublished']);
+    Route::post('posts',[ PostController::class, 'store']);
+    Route::post('posts/{id}/update',[ PostController::class, 'update']);
+    Route::post('posts/{id}/delete',[ PostController::class, 'destroy']);
+
 });
 

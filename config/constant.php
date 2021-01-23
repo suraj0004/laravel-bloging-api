@@ -6,5 +6,6 @@ return [
         "EDITOR" => "editors",
         "AUTHOR" => "authors",
         "ADMIN" => "admins",
+        "POST" => "posts",
     ]
 ];

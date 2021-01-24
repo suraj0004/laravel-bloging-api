@@ -11,14 +11,14 @@
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/tag" \
+    -G "http://blog.wpwink.com/api/tag" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/tag"
+    "http://blog.wpwink.com/api/tag"
 );
 
 let headers = {
@@ -76,16 +76,16 @@ fetch(url, {
 
 ```bash
 curl -X POST \
-    "http://localhost:8000/api/tag" \
+    "http://blog.wpwink.com/api/tag" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"tag":"in"}'
+    -d '{"tag":"dicta"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/tag"
+    "http://blog.wpwink.com/api/tag"
 );
 
 let headers = {
@@ -94,7 +94,7 @@ let headers = {
 };
 
 let body = {
-    "tag": "in"
+    "tag": "dicta"
 }
 
 fetch(url, {
@@ -146,14 +146,14 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/tag/rem" \
+    -G "http://blog.wpwink.com/api/tag/illo" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/tag/rem"
+    "http://blog.wpwink.com/api/tag/illo"
 );
 
 let headers = {
@@ -213,14 +213,14 @@ fetch(url, {
 
 ```bash
 curl -X PUT \
-    "http://localhost:8000/api/tag/aut" \
+    "http://blog.wpwink.com/api/tag/sed" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/tag/aut"
+    "http://blog.wpwink.com/api/tag/sed"
 );
 
 let headers = {
@@ -277,14 +277,14 @@ fetch(url, {
 
 ```bash
 curl -X DELETE \
-    "http://localhost:8000/api/tag/voluptas" \
+    "http://blog.wpwink.com/api/tag/quam" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/tag/voluptas"
+    "http://blog.wpwink.com/api/tag/quam"
 );
 
 let headers = {

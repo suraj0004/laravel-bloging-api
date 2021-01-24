@@ -61,6 +61,8 @@ class PostController extends Controller
     public function store(AddPostRequest $request)
     {
        $post = Post::create($request->getData());
+       $post->tags()->sync($request->getTags());
+       $post->categories()->sync($request->getCategories());
         return (new PostResource($post))->additional([
             "message" =>  "Post Added Successfully",
         ]);

@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\PostController;
+use App\Http\Controllers\Api\TagController;
+use App\Http\Controllers\Api\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -38,6 +40,9 @@ Route::group(['middleware' => ['auth:sanctum'] ], function () {
     Route::post('posts',[ PostController::class, 'store']);
     Route::post('posts/{id}/update',[ PostController::class, 'update']);
     Route::post('posts/{id}/delete',[ PostController::class, 'destroy']);
+
+    Route::apiResource('tag', TagController::class);
+    Route::apiResource('category', CategoryController::class);
 
 });
 

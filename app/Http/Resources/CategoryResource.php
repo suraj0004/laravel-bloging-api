@@ -3,10 +3,8 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-use Carbon\Carbon;
-USE Config;
 
-class PostResource extends JsonResource
+class CategoryResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -18,14 +16,10 @@ class PostResource extends JsonResource
     {
         return [
             "id" => $this->id,
-            "title" => $this->title,
-            "description" => $this->description,
-            "profile_photo" => getImageUrl(Config::get('constant.DISK.POST'),$this->feature_image),
-            "tags" => (new TagCollection($this->tags)),
-            "categories" => (new CategoryCollection($this->categories)),
-            "created_at" => Carbon::parse($this->created_at)->format("Y M d, H:i a"),
+            "category" => $this->category,
         ];
     }
+
     public function with($request)
     {
         return [
@@ -33,5 +27,4 @@ class PostResource extends JsonResource
             'message' => ""
         ];
     }
-
 }

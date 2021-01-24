@@ -6,9 +6,8 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\JsonResponse;
-use Config;
 
-class AddPostRequest extends FormRequest
+class AddTagRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -28,34 +27,15 @@ class AddPostRequest extends FormRequest
     public function rules()
     {
         return [
-            "title" => "required|string",
-            "description" => "required|string",
-            "feature_image" => "required|image",
-            "tags" => "required|array",
-            "tags.*" => "required|numeric|exists:tags,id",
-            "categories" => "required|array",
-            "categories.*" => "required|numeric|exists:categories,id",
+            "tag" => "required|string|unique:tags,tag"
         ];
     }
 
     public function getData()
     {
         return [
-            "user_id" => auth()->user()->id,
-            "title" => $this->title,
-            "description" => $this->description,
-            "feature_image" => saveImage(Config::get("constant.DISK.POST"), auth()->user()->id, $this->feature_image)
+            "tag" => $this->get("tag")
         ];
-    }
-
-    public function getTags()
-    {
-        return $this->get("tags");
-    }
-
-    public function getCategories()
-    {
-        return $this->get("categories");
     }
 
     public function failedValidation(Validator $validation)

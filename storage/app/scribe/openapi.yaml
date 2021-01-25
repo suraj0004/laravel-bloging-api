@@ -1,0 +1,919 @@
+openapi: 3.0.3
+info:
+    title: Blog
+    description: ''
+    version: 1.0.0
+servers:
+    -
+        url: 'http://blog.wpwink.com'
+paths:
+    /api/category:
+        get:
+            summary: 'Display a listing of the categories.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Category
+        post:
+            summary: 'Store a newly created Category.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Category
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                category:
+                                    type: string
+                                    description: ''
+                                    example: et
+                            required:
+                                - category
+    '/api/category/{category}':
+        get:
+            summary: 'fetch the specified Category.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Category
+        put:
+            summary: 'Update the specified Category.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Category
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                category_name:
+                                    type: string
+                                    description: ''
+                                    example: iure
+                            required:
+                                - category_name
+        delete:
+            summary: 'Remove the specified Category.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Category
+        parameters:
+            -
+                in: path
+                name: category
+                description: ''
+                example: iure
+                required: true
+                schema:
+                    type: string
+    /api/posts/all:
+        get:
+            summary: 'Display all posts.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+    /api/posts/published:
+        get:
+            summary: 'Display published posts.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+    /api/posts/unpublished:
+        get:
+            summary: 'Display unpublished posts.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+    '/api/posts/all/{id}':
+        get:
+            summary: 'Display the specified post.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: delectus
+                required: true
+                schema:
+                    type: string
+    '/api/posts/published/{id}':
+        get:
+            summary: 'Display the specified published post .'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: porro
+                required: true
+                schema:
+                    type: string
+    '/api/posts/unpublished/{id}':
+        get:
+            summary: 'Display the specified unpublished post.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Endpoints
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: et
+                required: true
+                schema:
+                    type: string
+    /api/posts:
+        post:
+            summary: 'Add Post.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: multipart/form-data
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            requestBody:
+                required: true
+                content:
+                    multipart/form-data:
+                        schema:
+                            type: object
+                            properties:
+                                title:
+                                    type: string
+                                    description: ''
+                                    example: eaque
+                                description:
+                                    type: string
+                                    description: ''
+                                    example: fugiat
+                                feature_image:
+                                    type: string
+                                    format: binary
+                                    description: 'The value must be an image.'
+                                tags:
+                                    type: array
+                                    description: ''
+                                    example: [68.234620601, 86.4]
+                                    items: { type: number }
+                                categories:
+                                    type: array
+                                    description: ''
+                                    example: [88444898.476795, 374042219.91]
+                                    items: { type: number }
+                            required:
+                                - title
+                                - description
+                                - feature_image
+                                - tags
+                                - categories
+    '/api/posts/{id}/update':
+        post:
+            summary: 'Update the specified post.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: facilis
+                required: true
+                schema:
+                    type: string
+    '/api/posts/{id}/delete':
+        post:
+            summary: 'Remove the specified post.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Endpoints
+            security: []
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: architecto
+                required: true
+                schema:
+                    type: string
+    /api/auth/user/registration:
+        post:
+            summary: 'User Registration'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: multipart/form-data
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - 'Registration | Login'
+            requestBody:
+                required: true
+                content:
+                    multipart/form-data:
+                        schema:
+                            type: object
+                            properties:
+                                name:
+                                    type: string
+                                    description: ''
+                                    example: optio
+                                email:
+                                    type: string
+                                    description: 'The value must be a valid email address.'
+                                    example: trever.beahan@example.net
+                                phone:
+                                    type: number
+                                    description: ''
+                                    example: 4208.7512
+                                password:
+                                    type: string
+                                    description: ''
+                                    example: architecto
+                                password_confirmation:
+                                    type: string
+                                    description: ''
+                                    example: ratione
+                                profile_photo:
+                                    type: string
+                                    format: binary
+                                    description: 'The value must be an image.'
+                            required:
+                                - name
+                                - email
+                                - phone
+                                - password
+                                - password_confirmation
+                                - profile_photo
+            security: []
+    /api/auth/author/registration:
+        post:
+            summary: 'Author Registration'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: multipart/form-data
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - 'Registration | Login'
+            requestBody:
+                required: true
+                content:
+                    multipart/form-data:
+                        schema:
+                            type: object
+                            properties:
+                                name:
+                                    type: string
+                                    description: ''
+                                    example: saepe
+                                email:
+                                    type: string
+                                    description: 'The value must be a valid email address.'
+                                    example: aidan36@example.com
+                                phone:
+                                    type: number
+                                    description: ''
+                                    example: !!float 2170
+                                password:
+                                    type: string
+                                    description: ''
+                                    example: enim
+                                password_confirmation:
+                                    type: string
+                                    description: ''
+                                    example: consequatur
+                                profile_photo:
+                                    type: string
+                                    format: binary
+                                    description: 'The value must be an image.'
+                            required:
+                                - name
+                                - email
+                                - phone
+                                - password
+                                - password_confirmation
+                                - profile_photo
+            security: []
+    /api/auth/editor/registration:
+        post:
+            summary: 'Editor Registration'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: multipart/form-data
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - 'Registration | Login'
+            requestBody:
+                required: true
+                content:
+                    multipart/form-data:
+                        schema:
+                            type: object
+                            properties:
+                                name:
+                                    type: string
+                                    description: ''
+                                    example: aut
+                                email:
+                                    type: string
+                                    description: 'The value must be a valid email address.'
+                                    example: hkeebler@example.net
+                                phone:
+                                    type: number
+                                    description: ''
+                                    example: 205037.532
+                                password:
+                                    type: string
+                                    description: ''
+                                    example: quam
+                                password_confirmation:
+                                    type: string
+                                    description: ''
+                                    example: nam
+                                profile_photo:
+                                    type: string
+                                    format: binary
+                                    description: 'The value must be an image.'
+                            required:
+                                - name
+                                - email
+                                - phone
+                                - password
+                                - password_confirmation
+                                - profile_photo
+            security: []
+    /api/auth/login:
+        post:
+            summary: Login
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - 'Registration | Login'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                email:
+                                    type: string
+                                    description: 'The value must be a valid email address.'
+                                    example: stephan98@example.org
+                                password:
+                                    type: string
+                                    description: ''
+                                    example: nobis
+                            required:
+                                - email
+                                - password
+            security: []
+    /api/auth/logout:
+        post:
+            summary: Logout
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - 'Registration | Login'
+    /api/tag:
+        get:
+            summary: 'Display a listing of the tags.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Tag
+        post:
+            summary: 'Store a newly created tag.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Tag
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                tag:
+                                    type: string
+                                    description: ''
+                                    example: quia
+                            required:
+                                - tag
+    '/api/tag/{tag}':
+        get:
+            summary: 'fetch the specified tag.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: Unauthenticated.
+                                properties:
+                                    message: { type: string, example: Unauthenticated. }
+            tags:
+                - Tag
+        put:
+            summary: 'Update the specified tag.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Tag
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                tag_name:
+                                    type: string
+                                    description: ''
+                                    example: deleniti
+                            required:
+                                - tag_name
+        delete:
+            summary: 'Remove the specified Tag.'
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses: {  }
+            tags:
+                - Tag
+        parameters:
+            -
+                in: path
+                name: tag
+                description: ''
+                example: vitae
+                required: true
+                schema:
+                    type: string

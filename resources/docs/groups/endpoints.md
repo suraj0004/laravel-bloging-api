@@ -11,14 +11,14 @@
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/posts/all" \
+    -G "http://blog.wpwink.com/api/posts/all" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/posts/all"
+    "http://blog.wpwink.com/api/posts/all"
 );
 
 let headers = {
@@ -76,14 +76,14 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/posts/published" \
+    -G "http://blog.wpwink.com/api/posts/published" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/posts/published"
+    "http://blog.wpwink.com/api/posts/published"
 );
 
 let headers = {
@@ -141,14 +141,14 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/posts/unpublished" \
+    -G "http://blog.wpwink.com/api/posts/unpublished" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/posts/unpublished"
+    "http://blog.wpwink.com/api/posts/unpublished"
 );
 
 let headers = {
@@ -206,14 +206,14 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/posts/all/architecto" \
+    -G "http://blog.wpwink.com/api/posts/all/delectus" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/posts/all/architecto"
+    "http://blog.wpwink.com/api/posts/all/delectus"
 );
 
 let headers = {
@@ -277,14 +277,14 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/posts/published/eligendi" \
+    -G "http://blog.wpwink.com/api/posts/published/porro" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/posts/published/eligendi"
+    "http://blog.wpwink.com/api/posts/published/porro"
 );
 
 let headers = {
@@ -348,14 +348,14 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/posts/unpublished/repudiandae" \
+    -G "http://blog.wpwink.com/api/posts/unpublished/et" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/posts/unpublished/repudiandae"
+    "http://blog.wpwink.com/api/posts/unpublished/et"
 );
 
 let headers = {
@@ -419,19 +419,19 @@ fetch(url, {
 
 ```bash
 curl -X POST \
-    "http://localhost:8000/api/posts" \
+    "http://blog.wpwink.com/api/posts" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: application/json" \
-    -F "title=odio" \
-    -F "description=nulla" \
-    -F "tags[]=22103.34138568" \
-    -F "categories[]=614202.46" \
-    -F "feature_image=@C:\Users\Windows\AppData\Local\Temp\php1CE2.tmp" 
+    -F "title=eaque" \
+    -F "description=fugiat" \
+    -F "tags[]=68.234620601" \
+    -F "categories[]=88444898.476795" \
+    -F "feature_image=@C:\Users\Windows\AppData\Local\Temp\php277A.tmp" 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/posts"
+    "http://blog.wpwink.com/api/posts"
 );
 
 let headers = {
@@ -440,10 +440,10 @@ let headers = {
 };
 
 const body = new FormData();
-body.append('title', 'odio');
-body.append('description', 'nulla');
-body.append('tags[]', '22103.34138568');
-body.append('categories[]', '614202.46');
+body.append('title', 'eaque');
+body.append('description', 'fugiat');
+body.append('tags[]', '68.234620601');
+body.append('categories[]', '88444898.476795');
 body.append('feature_image', document.querySelector('input[name="feature_image"]').files[0]);
 
 fetch(url, {
@@ -517,14 +517,14 @@ The value must be an image.</p>
 
 ```bash
 curl -X POST \
-    "http://localhost:8000/api/posts/aut/update" \
+    "http://blog.wpwink.com/api/posts/facilis/update" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/posts/aut/update"
+    "http://blog.wpwink.com/api/posts/facilis/update"
 );
 
 let headers = {
@@ -577,14 +577,14 @@ fetch(url, {
 
 ```bash
 curl -X POST \
-    "http://localhost:8000/api/posts/omnis/delete" \
+    "http://blog.wpwink.com/api/posts/architecto/delete" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/posts/omnis/delete"
+    "http://blog.wpwink.com/api/posts/architecto/delete"
 );
 
 let headers = {

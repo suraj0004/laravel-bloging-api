@@ -37,7 +37,6 @@ class TagController extends Controller
      */
     public function store(AddTagRequest $request)
     {
-        // return $request->getData();
         $tag = Tag::create($request->getData());
         return (new TagResource($tag))->additional([
             "message" => "Tag created successfully."
@@ -91,7 +90,7 @@ class TagController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified Tag.
      * @authenticated
      * @param  int  $id
      * @return \Illuminate\Http\Response

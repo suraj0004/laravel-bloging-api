@@ -11,14 +11,14 @@
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/tag" \
+    -G "http://blog.wpwink.com/api/tag" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/tag"
+    "http://blog.wpwink.com/api/tag"
 );
 
 let headers = {
@@ -76,16 +76,16 @@ fetch(url, {
 
 ```bash
 curl -X POST \
-    "http://localhost:8000/api/tag" \
+    "http://blog.wpwink.com/api/tag" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"tag":"velit"}'
+    -d '{"tag":"quia"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/tag"
+    "http://blog.wpwink.com/api/tag"
 );
 
 let headers = {
@@ -94,7 +94,7 @@ let headers = {
 };
 
 let body = {
-    "tag": "velit"
+    "tag": "quia"
 }
 
 fetch(url, {
@@ -147,14 +147,14 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/tag/aut" \
+    -G "http://blog.wpwink.com/api/tag/vitae" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/tag/aut"
+    "http://blog.wpwink.com/api/tag/vitae"
 );
 
 let headers = {
@@ -218,16 +218,16 @@ fetch(url, {
 
 ```bash
 curl -X PUT \
-    "http://localhost:8000/api/tag/iure" \
+    "http://blog.wpwink.com/api/tag/eos" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"tag_name":"qui"}'
+    -d '{"tag_name":"deleniti"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/tag/iure"
+    "http://blog.wpwink.com/api/tag/eos"
 );
 
 let headers = {
@@ -236,7 +236,7 @@ let headers = {
 };
 
 let body = {
-    "tag_name": "qui"
+    "tag_name": "deleniti"
 }
 
 fetch(url, {
@@ -289,7 +289,7 @@ fetch(url, {
 </form>
 
 
-## Remove the specified resource from storage.
+## Remove the specified Tag.
 
 <small class="badge badge-darkred">requires authentication</small>
 
@@ -299,14 +299,14 @@ fetch(url, {
 
 ```bash
 curl -X DELETE \
-    "http://localhost:8000/api/tag/quaerat" \
+    "http://blog.wpwink.com/api/tag/cum" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/tag/quaerat"
+    "http://blog.wpwink.com/api/tag/cum"
 );
 
 let headers = {

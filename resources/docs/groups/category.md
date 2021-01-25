@@ -11,14 +11,14 @@
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/category" \
+    -G "http://blog.wpwink.com/api/category" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/category"
+    "http://blog.wpwink.com/api/category"
 );
 
 let headers = {
@@ -76,16 +76,16 @@ fetch(url, {
 
 ```bash
 curl -X POST \
-    "http://localhost:8000/api/category" \
+    "http://blog.wpwink.com/api/category" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"category":"ut"}'
+    -d '{"category":"et"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/category"
+    "http://blog.wpwink.com/api/category"
 );
 
 let headers = {
@@ -94,7 +94,7 @@ let headers = {
 };
 
 let body = {
-    "category": "ut"
+    "category": "et"
 }
 
 fetch(url, {
@@ -137,8 +137,9 @@ fetch(url, {
 </form>
 
 
-## Display the specified resource.
+## fetch the specified Category.
 
+<small class="badge badge-darkred">requires authentication</small>
 
 
 
@@ -146,14 +147,14 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://localhost:8000/api/category/laudantium" \
+    -G "http://blog.wpwink.com/api/category/iure" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/category/laudantium"
+    "http://blog.wpwink.com/api/category/iure"
 );
 
 let headers = {
@@ -184,7 +185,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-GETapi-category--category-"></code></pre>
 </div>
-<form id="form-GETapi-category--category-" data-method="GET" data-path="api/category/{category}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-category--category-', this);">
+<form id="form-GETapi-category--category-" data-method="GET" data-path="api/category/{category}" data-authed="1" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-category--category-', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
         <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-category--category-" onclick="tryItOut('GETapi-category--category-');">Try it out ⚡</button>
@@ -195,6 +196,9 @@ fetch(url, {
 <small class="badge badge-green">GET</small>
  <b><code>api/category/{category}</code></b>
 </p>
+<p>
+<label id="auth-GETapi-category--category-" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="GETapi-category--category-" data-component="header"></label>
+</p>
 <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
 <p>
 <b><code>category</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
@@ -204,8 +208,9 @@ fetch(url, {
 </form>
 
 
-## Update the specified resource in storage.
+## Update the specified Category.
 
+<small class="badge badge-darkred">requires authentication</small>
 
 
 
@@ -213,14 +218,16 @@ fetch(url, {
 
 ```bash
 curl -X PUT \
-    "http://localhost:8000/api/category/praesentium" \
+    "http://blog.wpwink.com/api/category/maxime" \
     -H "Content-Type: application/json" \
-    -H "Accept: application/json"
+    -H "Accept: application/json" \
+    -d '{"category_name":"iure"}'
+
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/category/praesentium"
+    "http://blog.wpwink.com/api/category/maxime"
 );
 
 let headers = {
@@ -228,10 +235,14 @@ let headers = {
     "Accept": "application/json",
 };
 
+let body = {
+    "category_name": "iure"
+}
 
 fetch(url, {
     method: "PUT",
     headers,
+    body: JSON.stringify(body),
 }).then(response => response.json());
 ```
 
@@ -244,7 +255,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-PUTapi-category--category-"></code></pre>
 </div>
-<form id="form-PUTapi-category--category-" data-method="PUT" data-path="api/category/{category}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('PUTapi-category--category-', this);">
+<form id="form-PUTapi-category--category-" data-method="PUT" data-path="api/category/{category}" data-authed="1" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('PUTapi-category--category-', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
         <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-PUTapi-category--category-" onclick="tryItOut('PUTapi-category--category-');">Try it out ⚡</button>
@@ -259,17 +270,28 @@ fetch(url, {
 <small class="badge badge-purple">PATCH</small>
  <b><code>api/category/{category}</code></b>
 </p>
+<p>
+<label id="auth-PUTapi-category--category-" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="PUTapi-category--category-" data-component="header"></label>
+</p>
 <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
 <p>
 <b><code>category</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="category" data-endpoint="PUTapi-category--category-" data-component="url" required  hidden>
 <br>
 </p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>category_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="category_name" data-endpoint="PUTapi-category--category-" data-component="body" required  hidden>
+<br>
+</p>
+
 </form>
 
 
-## Remove the specified resource from storage.
+## Remove the specified Category.
 
+<small class="badge badge-darkred">requires authentication</small>
 
 
 
@@ -277,14 +299,14 @@ fetch(url, {
 
 ```bash
 curl -X DELETE \
-    "http://localhost:8000/api/category/unde" \
+    "http://blog.wpwink.com/api/category/quod" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/category/unde"
+    "http://blog.wpwink.com/api/category/quod"
 );
 
 let headers = {
@@ -308,7 +330,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-DELETEapi-category--category-"></code></pre>
 </div>
-<form id="form-DELETEapi-category--category-" data-method="DELETE" data-path="api/category/{category}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('DELETEapi-category--category-', this);">
+<form id="form-DELETEapi-category--category-" data-method="DELETE" data-path="api/category/{category}" data-authed="1" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('DELETEapi-category--category-', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
         <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-DELETEapi-category--category-" onclick="tryItOut('DELETEapi-category--category-');">Try it out ⚡</button>
@@ -318,6 +340,9 @@ fetch(url, {
 <p>
 <small class="badge badge-red">DELETE</small>
  <b><code>api/category/{category}</code></b>
+</p>
+<p>
+<label id="auth-DELETEapi-category--category-" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="DELETEapi-category--category-" data-component="header"></label>
 </p>
 <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
 <p>

@@ -11,20 +11,20 @@ APIs for managing authentication
 
 ```bash
 curl -X POST \
-    "http://localhost:8000/api/auth/user/registration" \
+    "http://blog.wpwink.com/api/auth/user/registration" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: application/json" \
-    -F "name=nesciunt" \
-    -F "email=bogan.maribel@example.org" \
-    -F "phone=24881649.14" \
-    -F "password=sint" \
-    -F "password_confirmation=ipsam" \
-    -F "profile_photo=@C:\Users\Windows\AppData\Local\Temp\php1BF5.tmp" 
+    -F "name=optio" \
+    -F "email=trever.beahan@example.net" \
+    -F "phone=4208.7512" \
+    -F "password=architecto" \
+    -F "password_confirmation=ratione" \
+    -F "profile_photo=@C:\Users\Windows\AppData\Local\Temp\php26CB.tmp" 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/auth/user/registration"
+    "http://blog.wpwink.com/api/auth/user/registration"
 );
 
 let headers = {
@@ -33,11 +33,11 @@ let headers = {
 };
 
 const body = new FormData();
-body.append('name', 'nesciunt');
-body.append('email', 'bogan.maribel@example.org');
-body.append('phone', '24881649.14');
-body.append('password', 'sint');
-body.append('password_confirmation', 'ipsam');
+body.append('name', 'optio');
+body.append('email', 'trever.beahan@example.net');
+body.append('phone', '4208.7512');
+body.append('password', 'architecto');
+body.append('password_confirmation', 'ratione');
 body.append('profile_photo', document.querySelector('input[name="profile_photo"]').files[0]);
 
 fetch(url, {
@@ -111,20 +111,20 @@ The value must be an image.</p>
 
 ```bash
 curl -X POST \
-    "http://localhost:8000/api/auth/author/registration" \
+    "http://blog.wpwink.com/api/auth/author/registration" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: application/json" \
-    -F "name=ea" \
-    -F "email=xgoodwin@example.net" \
-    -F "phone=4395932.4286676" \
-    -F "password=ut" \
-    -F "password_confirmation=est" \
-    -F "profile_photo=@C:\Users\Windows\AppData\Local\Temp\php1C15.tmp" 
+    -F "name=saepe" \
+    -F "email=aidan36@example.com" \
+    -F "phone=2170" \
+    -F "password=enim" \
+    -F "password_confirmation=consequatur" \
+    -F "profile_photo=@C:\Users\Windows\AppData\Local\Temp\php26FB.tmp" 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/auth/author/registration"
+    "http://blog.wpwink.com/api/auth/author/registration"
 );
 
 let headers = {
@@ -133,11 +133,11 @@ let headers = {
 };
 
 const body = new FormData();
-body.append('name', 'ea');
-body.append('email', 'xgoodwin@example.net');
-body.append('phone', '4395932.4286676');
-body.append('password', 'ut');
-body.append('password_confirmation', 'est');
+body.append('name', 'saepe');
+body.append('email', 'aidan36@example.com');
+body.append('phone', '2170');
+body.append('password', 'enim');
+body.append('password_confirmation', 'consequatur');
 body.append('profile_photo', document.querySelector('input[name="profile_photo"]').files[0]);
 
 fetch(url, {
@@ -211,20 +211,20 @@ The value must be an image.</p>
 
 ```bash
 curl -X POST \
-    "http://localhost:8000/api/auth/editor/registration" \
+    "http://blog.wpwink.com/api/auth/editor/registration" \
     -H "Content-Type: multipart/form-data" \
     -H "Accept: application/json" \
-    -F "name=facilis" \
-    -F "email=joe90@example.com" \
-    -F "phone=3.399564223" \
-    -F "password=a" \
-    -F "password_confirmation=quam" \
-    -F "profile_photo=@C:\Users\Windows\AppData\Local\Temp\php1C25.tmp" 
+    -F "name=aut" \
+    -F "email=hkeebler@example.net" \
+    -F "phone=205037.532" \
+    -F "password=quam" \
+    -F "password_confirmation=nam" \
+    -F "profile_photo=@C:\Users\Windows\AppData\Local\Temp\php26FC.tmp" 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/auth/editor/registration"
+    "http://blog.wpwink.com/api/auth/editor/registration"
 );
 
 let headers = {
@@ -233,11 +233,11 @@ let headers = {
 };
 
 const body = new FormData();
-body.append('name', 'facilis');
-body.append('email', 'joe90@example.com');
-body.append('phone', '3.399564223');
-body.append('password', 'a');
-body.append('password_confirmation', 'quam');
+body.append('name', 'aut');
+body.append('email', 'hkeebler@example.net');
+body.append('phone', '205037.532');
+body.append('password', 'quam');
+body.append('password_confirmation', 'nam');
 body.append('profile_photo', document.querySelector('input[name="profile_photo"]').files[0]);
 
 fetch(url, {
@@ -311,16 +311,16 @@ The value must be an image.</p>
 
 ```bash
 curl -X POST \
-    "http://localhost:8000/api/auth/login" \
+    "http://blog.wpwink.com/api/auth/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"email":"burley.walker@example.org","password":"qui"}'
+    -d '{"email":"stephan98@example.org","password":"nobis"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/auth/login"
+    "http://blog.wpwink.com/api/auth/login"
 );
 
 let headers = {
@@ -329,8 +329,8 @@ let headers = {
 };
 
 let body = {
-    "email": "burley.walker@example.org",
-    "password": "qui"
+    "email": "stephan98@example.org",
+    "password": "nobis"
 }
 
 fetch(url, {
@@ -385,14 +385,14 @@ The value must be a valid email address.</p>
 
 ```bash
 curl -X POST \
-    "http://localhost:8000/api/auth/logout" \
+    "http://blog.wpwink.com/api/auth/logout" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost:8000/api/auth/logout"
+    "http://blog.wpwink.com/api/auth/logout"
 );
 
 let headers = {

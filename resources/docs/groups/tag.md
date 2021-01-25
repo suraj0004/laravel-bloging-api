@@ -11,14 +11,14 @@
 
 ```bash
 curl -X GET \
-    -G "http://blog.wpwink.com/api/tag" \
+    -G "http://localhost:8000/api/tag" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://blog.wpwink.com/api/tag"
+    "http://localhost:8000/api/tag"
 );
 
 let headers = {
@@ -76,16 +76,16 @@ fetch(url, {
 
 ```bash
 curl -X POST \
-    "http://blog.wpwink.com/api/tag" \
+    "http://localhost:8000/api/tag" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"tag":"dicta"}'
+    -d '{"tag":"velit"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://blog.wpwink.com/api/tag"
+    "http://localhost:8000/api/tag"
 );
 
 let headers = {
@@ -94,7 +94,7 @@ let headers = {
 };
 
 let body = {
-    "tag": "dicta"
+    "tag": "velit"
 }
 
 fetch(url, {
@@ -137,8 +137,9 @@ fetch(url, {
 </form>
 
 
-## Display the specified resource.
+## fetch the specified tag.
 
+<small class="badge badge-darkred">requires authentication</small>
 
 
 
@@ -146,14 +147,14 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://blog.wpwink.com/api/tag/illo" \
+    -G "http://localhost:8000/api/tag/aut" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://blog.wpwink.com/api/tag/illo"
+    "http://localhost:8000/api/tag/aut"
 );
 
 let headers = {
@@ -184,7 +185,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-GETapi-tag--tag-"></code></pre>
 </div>
-<form id="form-GETapi-tag--tag-" data-method="GET" data-path="api/tag/{tag}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-tag--tag-', this);">
+<form id="form-GETapi-tag--tag-" data-method="GET" data-path="api/tag/{tag}" data-authed="1" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-tag--tag-', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
         <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-tag--tag-" onclick="tryItOut('GETapi-tag--tag-');">Try it out ⚡</button>
@@ -195,6 +196,9 @@ fetch(url, {
 <small class="badge badge-green">GET</small>
  <b><code>api/tag/{tag}</code></b>
 </p>
+<p>
+<label id="auth-GETapi-tag--tag-" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="GETapi-tag--tag-" data-component="header"></label>
+</p>
 <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
 <p>
 <b><code>tag</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
@@ -204,8 +208,9 @@ fetch(url, {
 </form>
 
 
-## Update the specified resource in storage.
+## Update the specified tag.
 
+<small class="badge badge-darkred">requires authentication</small>
 
 
 
@@ -213,14 +218,16 @@ fetch(url, {
 
 ```bash
 curl -X PUT \
-    "http://blog.wpwink.com/api/tag/sed" \
+    "http://localhost:8000/api/tag/iure" \
     -H "Content-Type: application/json" \
-    -H "Accept: application/json"
+    -H "Accept: application/json" \
+    -d '{"tag_name":"qui"}'
+
 ```
 
 ```javascript
 const url = new URL(
-    "http://blog.wpwink.com/api/tag/sed"
+    "http://localhost:8000/api/tag/iure"
 );
 
 let headers = {
@@ -228,10 +235,14 @@ let headers = {
     "Accept": "application/json",
 };
 
+let body = {
+    "tag_name": "qui"
+}
 
 fetch(url, {
     method: "PUT",
     headers,
+    body: JSON.stringify(body),
 }).then(response => response.json());
 ```
 
@@ -244,7 +255,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-PUTapi-tag--tag-"></code></pre>
 </div>
-<form id="form-PUTapi-tag--tag-" data-method="PUT" data-path="api/tag/{tag}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('PUTapi-tag--tag-', this);">
+<form id="form-PUTapi-tag--tag-" data-method="PUT" data-path="api/tag/{tag}" data-authed="1" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('PUTapi-tag--tag-', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
         <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-PUTapi-tag--tag-" onclick="tryItOut('PUTapi-tag--tag-');">Try it out ⚡</button>
@@ -259,17 +270,28 @@ fetch(url, {
 <small class="badge badge-purple">PATCH</small>
  <b><code>api/tag/{tag}</code></b>
 </p>
+<p>
+<label id="auth-PUTapi-tag--tag-" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="PUTapi-tag--tag-" data-component="header"></label>
+</p>
 <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
 <p>
 <b><code>tag</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
 <input type="text" name="tag" data-endpoint="PUTapi-tag--tag-" data-component="url" required  hidden>
 <br>
 </p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>tag_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="tag_name" data-endpoint="PUTapi-tag--tag-" data-component="body" required  hidden>
+<br>
+</p>
+
 </form>
 
 
 ## Remove the specified resource from storage.
 
+<small class="badge badge-darkred">requires authentication</small>
 
 
 
@@ -277,14 +299,14 @@ fetch(url, {
 
 ```bash
 curl -X DELETE \
-    "http://blog.wpwink.com/api/tag/quam" \
+    "http://localhost:8000/api/tag/quaerat" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://blog.wpwink.com/api/tag/quam"
+    "http://localhost:8000/api/tag/quaerat"
 );
 
 let headers = {
@@ -308,7 +330,7 @@ fetch(url, {
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-DELETEapi-tag--tag-"></code></pre>
 </div>
-<form id="form-DELETEapi-tag--tag-" data-method="DELETE" data-path="api/tag/{tag}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('DELETEapi-tag--tag-', this);">
+<form id="form-DELETEapi-tag--tag-" data-method="DELETE" data-path="api/tag/{tag}" data-authed="1" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('DELETEapi-tag--tag-', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
         <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-DELETEapi-tag--tag-" onclick="tryItOut('DELETEapi-tag--tag-');">Try it out ⚡</button>
@@ -318,6 +340,9 @@ fetch(url, {
 <p>
 <small class="badge badge-red">DELETE</small>
  <b><code>api/tag/{tag}</code></b>
+</p>
+<p>
+<label id="auth-DELETEapi-tag--tag-" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="DELETEapi-tag--tag-" data-component="header"></label>
 </p>
 <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
 <p>

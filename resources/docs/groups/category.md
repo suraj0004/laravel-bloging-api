@@ -11,14 +11,14 @@
 
 ```bash
 curl -X GET \
-    -G "http://blog.wpwink.com/api/category" \
+    -G "http://localhost:8000/api/category" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://blog.wpwink.com/api/category"
+    "http://localhost:8000/api/category"
 );
 
 let headers = {
@@ -76,16 +76,16 @@ fetch(url, {
 
 ```bash
 curl -X POST \
-    "http://blog.wpwink.com/api/category" \
+    "http://localhost:8000/api/category" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"category":"iusto"}'
+    -d '{"category":"ut"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://blog.wpwink.com/api/category"
+    "http://localhost:8000/api/category"
 );
 
 let headers = {
@@ -94,7 +94,7 @@ let headers = {
 };
 
 let body = {
-    "category": "iusto"
+    "category": "ut"
 }
 
 fetch(url, {
@@ -146,14 +146,14 @@ fetch(url, {
 
 ```bash
 curl -X GET \
-    -G "http://blog.wpwink.com/api/category/autem" \
+    -G "http://localhost:8000/api/category/laudantium" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://blog.wpwink.com/api/category/autem"
+    "http://localhost:8000/api/category/laudantium"
 );
 
 let headers = {
@@ -213,14 +213,14 @@ fetch(url, {
 
 ```bash
 curl -X PUT \
-    "http://blog.wpwink.com/api/category/non" \
+    "http://localhost:8000/api/category/praesentium" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://blog.wpwink.com/api/category/non"
+    "http://localhost:8000/api/category/praesentium"
 );
 
 let headers = {
@@ -277,14 +277,14 @@ fetch(url, {
 
 ```bash
 curl -X DELETE \
-    "http://blog.wpwink.com/api/category/aut" \
+    "http://localhost:8000/api/category/unde" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://blog.wpwink.com/api/category/aut"
+    "http://localhost:8000/api/category/unde"
 );
 
 let headers = {

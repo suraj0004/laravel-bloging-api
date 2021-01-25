@@ -8,7 +8,8 @@ use App\Models\Tag;
 use App\Http\Resources\TagCollection;
 use App\Http\Resources\TagResource;
 use App\Http\Requests\AddTagRequest;
-
+use App\Http\Requests\UpdateTagRequest;
+use Exception;
 /**
  * @group Tag
  */
@@ -44,36 +45,72 @@ class TagController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
+     * fetch the specified tag.
+     * @authenticated
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return TagResource
      */
     public function show($id)
     {
-        //
+        $tag = Tag::find($id);
+
+        if(!$tag){
+            return response()->json([
+                "success" => false,
+                "message" => "Tag ID does not exists."
+            ], 200);
+        }
+
+        return (new TagResource($tag))->additional([
+            "message" => "Tag fetch successfully."
+        ]);
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
+     * Update the specified tag.
+     * @authenticated
+     * @param  UpdateTagRequest  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return TagResource
      */
-    public function update(Request $request, $id)
+    public function update(UpdateTagRequest $request, $id)
     {
-        //
+        $tag = Tag::find($id);
+
+        if(!$tag){
+            return response()->json([
+                "success" => false,
+                "message" => "Tag ID does not exists."
+            ], 200);
+        }
+
+         $tag->update($request->getData());
+        return (new TagResource($tag))->additional([
+            "message" => "Tag updated successfully."
+        ]);
     }
 
     /**
      * Remove the specified resource from storage.
-     *
+     * @authenticated
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        //
+        try {
+            Tag::whereId($id)
+              ->delete();
+        } catch (Exception $th) {
+            return response()->json([
+                "success" => false,
+                "message" => "unable to delete Tag, tag is associated to some post."
+            ], 200);
+        }
+
+        return response()->json([
+            "success" => true,
+            "message" => "Tag deleted successfully"
+        ], 200);
     }
 }

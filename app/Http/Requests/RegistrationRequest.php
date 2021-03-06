@@ -32,22 +32,22 @@ class RegistrationRequest extends FormRequest
         return [
             "name" => "required|string",
             "email" => "required|email:rfc,dns|unique:users,email",
-            "phone" => "required|numeric|digits:10|unique:users,phone",
+            // "phone" => "required|numeric|digits:10|unique:users,phone",
             "password" => "required|min:6|confirmed",
             "password_confirmation" => "required",
-            "profile_photo" => "required|image",
+            // "profile_photo" => "required|image",
         ];
     }
 
     public function getUserData()
     {
         return [
-            "role_id" => User::ROLES["USER"],
+            // "role_id" => User::ROLES["USER"],
             "name" => $this->name,
             "email" => $this->email,
-            "phone" => $this->phone,
+            // "phone" => $this->phone,
             "password" => Hash::make($this->password),
-            "profile_photo" => saveImage(Config::get("constant.DISK.USER"), "user", $this->profile_photo)
+            // "profile_photo" => saveImage(Config::get("constant.DISK.USER"), "user", $this->profile_photo)
         ];
     }
 

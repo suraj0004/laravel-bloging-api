@@ -19,9 +19,9 @@ class UserResource extends JsonResource
         return [
             "name" => $this->name,
             "email" => $this->email,
-            "phone" => $this->phone,
-            "role" => array_search($this->role_id,User::ROLES),
-            "profile_photo" => getImageUrl($this->getDisk($this->role_id),$this->profile_photo),
+            // "phone" => $this->phone,
+            // "role" => array_search($this->role_id,User::ROLES),
+            // "profile_photo" => getImageUrl($this->getDisk($this->role_id),$this->profile_photo),
         ];
     }
 

@@ -26,7 +26,7 @@ Route::group(['prefix' => 'auth'], function () {
     Route::post('editor/registration',[AuthController::class, 'editorRegistration']);
 
     Route::post('login',[AuthController::class, 'login']);
-    Route::post('logout',[AuthController::class, 'logout']);
+
 
 });
 
@@ -34,6 +34,7 @@ Route::group(['middleware' => ['auth:sanctum'] ], function () {
 
     Route::get('menu',[ MenuController::class, 'index']);
     Route::get('menu/{slug}',[ MenuController::class, 'getCategoryPosts']);
+    Route::post('logout',[AuthController::class, 'logout']);
 
     Route::get('posts/all',[ PostController::class, 'all']);
     Route::get('posts/published',[ PostController::class, 'published']);

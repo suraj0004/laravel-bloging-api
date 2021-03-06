@@ -29,7 +29,6 @@ class UserResource extends JsonResource
     {
         return [
             "success" => true,
-            'message' => ""
         ];
     }
 

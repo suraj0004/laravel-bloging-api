@@ -6,7 +6,9 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\PostController;
 use App\Http\Controllers\Api\TagController;
 use App\Http\Controllers\Api\CategoryController;
+
 use App\Http\Controllers\Api\MenuController;
+use App\Http\Controllers\Api\NewsController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -30,10 +32,11 @@ Route::group(['prefix' => 'auth'], function () {
 
 });
 
-Route::group(['middleware' => ['auth:sanctum'] ], function () {
+Route::group(['middleware' => [] ], function () {
 
     Route::get('menu',[ MenuController::class, 'index']);
     Route::get('menu/{slug}',[ MenuController::class, 'getCategoryPosts']);
+    Route::get('news/detail/{id}',[ NewsController::class, 'showDetailNews']);
     Route::post('logout',[AuthController::class, 'logout']);
 
     Route::get('posts/all',[ PostController::class, 'all']);

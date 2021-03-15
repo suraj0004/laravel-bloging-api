@@ -19,7 +19,7 @@ class MenuController extends Controller
         ], 200);
     }
 
-    public function getCategoryPosts($page = null)
+    public function getCategoryPosts($page = "home")
     {
         $all_pages = Page::all()->toArray();
         if (empty($all_pages)) {
@@ -29,7 +29,7 @@ class MenuController extends Controller
             ], 200);
 
         }
-        if (is_null($page)) {
+        if ($page == "home") {
             $page = Page::where('template', 'home')->where('status', '=', 1)->first();
             $data = collect($page)->map(function ($x) {return (array) $x;})->toArray();
             if (empty($data)) {
